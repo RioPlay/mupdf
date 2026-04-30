@@ -227,6 +227,10 @@ ifneq ($(filter -DTOFU_CJK_LANG,$(CFLAGS)),)
   FONT_BIN := $(filter-out resources/fonts/han/%.ttc, $(FONT_BIN))
 endif
 
+ifneq ($(filter -DTOFU_BASE14,$(CFLAGS)),)
+  FONT_BIN := $(filter-out resources/fonts/urw/%.cff,$(FONT_BIN))
+endif
+
 ifneq ($(filter -DTOFU,$(CFLAGS)),)
   FONT_BIN := $(filter-out resources/fonts/noto/%.otf,$(FONT_BIN))
   FONT_BIN := $(filter-out resources/fonts/noto/%.ttf,$(FONT_BIN))
